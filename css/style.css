@@ -1,0 +1,234 @@
+@import url("https://fonts.googleapis.com/css2?family=Trispace:wght@400;700&display=swap");
+body {
+  font-family: 'Trispace', sans-serif;
+  font-weight: 400;
+}
+
+.center {
+  padding-left: calc( 50% - 585px);
+  padding-right: calc( 50% - 585px);
+}
+
+.wrapper {
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.wrapper__top {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.main__logo {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 48px;
+  letter-spacing: -1px;
+  color: #FFFFFF;
+}
+
+.main__title {
+  font-weight: 700;
+  font-size: 72px;
+  line-height: 80px;
+  letter-spacing: -3px;
+}
+
+.sub__span {
+  font-size: 16px;
+  line-height: 32px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #ED3A4E;
+}
+
+.section__title {
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 64px;
+  letter-spacing: -2px;
+}
+
+.section__text {
+  font-size: 20px;
+  line-height: 32px;
+}
+
+.link {
+  display: block;
+  padding: 16px 40px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  text-transform: uppercase;
+  border: 1px solid rgba(29, 70, 246, 0.3);
+  border-radius: 6px;
+  color: #1D46F6;
+  background: #FFFFFF;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+}
+
+.link:hover {
+  border-color: transparent;
+  color: #FFFFFF;
+  background: #1D46F6;
+}
+
+.top {
+  height: 880px;
+  color: #FFFFFF;
+  background: #210C38;
+}
+
+.top__header {
+  padding-top: 16px;
+  padding-bottom: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.top .header__nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.top .header__nav-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.top .header__nav-list {
+  padding: 0 40px;
+}
+
+.top .header__nav-link {
+  padding: 10px 0;
+  font-size: 16px;
+  line-height: 32px;
+  border-bottom: 1px solid transparent;
+  -webkit-transition: border-color .2s ease;
+  transition: border-color .2s ease;
+}
+
+.top .header__nav-link:hover {
+  border-color: #FFFFFF;
+}
+
+.top .link__box .link {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #FFFFFF;
+  background: transparent;
+}
+
+.top .link__box .link:hover {
+  border-color: transparent;
+  color: #FFFFFF;
+  background: #1D46F6;
+}
+
+.top__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 112px;
+}
+
+.top__heading {
+  max-width: 440px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding-bottom: 33px;
+}
+
+.top .main__title {
+  margin-top: 21px;
+  margin-bottom: 26px;
+}
+
+.top .top__link {
+  margin-top: 35px;
+}
+
+.top .top__link .link {
+  display: inline-block;
+  border-color: transparent;
+  color: #FFFFFF;
+  background: #1D46F6;
+}
+
+.top .top__link .link:hover {
+  background: rgba(29, 70, 246, 0.3);
+}
+
+.top .top__img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (max-width: 1216px) {
+  .center {
+    padding-left: 23px;
+    padding-right: 23px;
+  }
+}
+
+@media (max-width: 1170px) {
+  .top .main__title {
+    font-size: calc(56px + 16 * ((100vw - 375px) / 795));
+  }
+}
+
+@media (max-width: 989px) {
+  .top .top__img {
+    margin-bottom: 25px;
+  }
+}
+
+@media (max-width: 682px) {
+  .top .top__heading {
+    padding-bottom: 0;
+  }
+  .top .main__title {
+    margin-top: 18px;
+    margin-bottom: 13px;
+    line-height: 64px;
+    letter-spacing: -2px;
+  }
+  .top .top__link {
+    margin-top: 16px;
+  }
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Trispace:wght@400;700&display=swap')
+
+// var's
+$section-color: #210C38
+$link-color: #1D46F6
+$link-border-color: rgba(29, 70, 246, .3)
+$sub__span-color: #ED3A4E
+
+// mixin's ( @include adaptiv(40, 20, 894) )
+@mixin adaptiv($pcSize, $mobSize, $maxWidth)
+    $addSize: $pcSize - $mobSize
+    $maxWidth: $maxWidth - 375
+    font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 375px) / #{$maxWidth}))
+
+body
+    font-family: 'Trispace', sans-serif
+    font-weight: 400
+
+.center
+    padding-left: calc( 50% - 585px )
+    padding-right: calc( 50% - 585px )
+
+.wrapper
+    min-height: 100vh
+    display: flex
+    flex-direction: column
+    &__top
+        flex-grow: 1
+
+.main__logo
+    font-weight: 700
+    font-size: 40px
+    line-height: 48px
+    letter-spacing: -1px
+    color: #FFFFFF
+
+.main__title
+    font-weight: 700
+    font-size: 72px
+    line-height: 80px
+    letter-spacing: -3px
+
+.sub__span
+    font-size: 16px
+    line-height: 32px
+    letter-spacing: 3px
+    text-transform: uppercase
+    color: $sub__span-color
+
+.section__title
+    font-weight: 700
+    font-size: 56px
+    line-height: 64px
+    letter-spacing: -2px
+
+.section__text
+    font-size: 20px
+    line-height: 32px
+
+.link
+    display: block
+    padding: 16px 40px
+    font-weight: 700
+    font-size: 14px
+    line-height: 16px
+    text-align: center
+    text-transform: uppercase
+    border: 1px solid $link-border-color
+    border-radius: 6px
+    color: $link-color
+    background: #FFFFFF
+    transition: all .2s ease
+    &:hover
+        border-color: transparent
+        color: #FFFFFF
+        background: $link-color
+
+.top
+    height: 880px
+    color: #FFFFFF
+    background: $section-color
+    &__header
+        padding-top: 16px
+        padding-bottom: 16px
+        display: flex
+        justify-content: space-between
+    .header__nav
+        display: flex
+        align-items: center
+    .header__nav-menu
+        display: flex
+    .header__nav-list
+        padding: 0 40px    
+    .header__nav-link
+        padding: 10px 0
+        font-size: 16px
+        line-height: 32px
+        border-bottom: 1px solid transparent
+        transition: border-color .2s ease
+        &:hover
+            border-color: #FFFFFF
+    .link__box .link
+        border: 1px solid rgba(255, 255, 255, .3)
+        color: #FFFFFF
+        background: transparent
+        &:hover
+            border-color: transparent
+            color: #FFFFFF
+            background: $link-color
+    &__content
+        display: flex
+        justify-content: space-between
+        margin-top: 112px
+    &__heading
+        max-width: 440px
+        display: flex
+        flex-direction: column
+        justify-content: flex-end
+        padding-bottom: 33px
+    .main__title
+        margin-top: 21px
+        margin-bottom: 26px
+    .top__link
+        margin-top: 35px
+        .link
+            display: inline-block
+            border-color: transparent
+            color: #FFFFFF
+            background: $link-color
+            &:hover
+                background: $link-border-color
+    .top__img
+        display: flex
+        align-items: center
+                
+
+@media (max-width: 1216px)
+    .center
+        padding-left: 23px
+        padding-right: 23px
+
+@media (max-width: 1170px)
+    .top
+        .main__title
+            @include adaptiv(72, 56, 1170)
+
+@media (max-width: 989px)
+    .top
+        .top__img
+            margin-bottom: 25px
+
+@media (max-width: 682px)
+    .top
+        .top__heading
+            padding-bottom: 0
+        .main__title
+            margin-top: 18px
+            margin-bottom: 13px
+            line-height: 64px
+            letter-spacing: -2px
+        .top__link
+            margin-top: 16px
