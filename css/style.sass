@@ -316,6 +316,10 @@ body
         display: inline-block
         font-size: 16px
         line-height: 32px
+        transition: border-bottom .3s ease
+        border-bottom: 1px solid transparent
+        &:hover
+            border-color: $color-text
 
 .domain
     padding-top: 74px
@@ -387,6 +391,105 @@ body
         &:active
             background: #7B0815
 
+.about
+    padding-top: 144px
+    padding-bottom: 161px
+    &__box
+        display: flex
+        justify-content: space-between
+        gap: 20px
+        margin-bottom: 186px
+    &__heading
+        max-width: 470px
+        padding-top: 74px
+    .section__title
+        margin-top: 18px
+        margin-bottom: 29px
+    .link
+        margin-top: 34px
+    &__count
+        display: flex
+        justify-content: space-between
+    &__item
+        width: 190px
+    .small__title
+        margin-bottom: 15px
+
+.data
+    display: flex
+    flex-direction: column
+    align-items: center
+    padding-bottom: 144px
+    &__heading
+        max-width: 390px
+        text-align: center
+    .section__title
+        margin-top: 18px
+        margin-bottom: 53px
+    &__img
+        position: relative
+    &__check
+        width: 170px
+        height: 178px
+        position: absolute
+    .USA
+        top: 11px
+        left: 66px
+    .South-America
+        top: 151px
+        left: 299px
+    .Norway
+        top: -48px
+        left: 44%
+    .Asia
+        top: 28px
+        right: 187px
+    .Australia
+        right: 16px
+        bottom: 81px
+    .data__input
+        position: absolute
+        visibility: hidden
+        left: -9999999px
+        &:checked + .data__pop-content
+            display: block
+    &__check-box
+        width: 100%
+        height: 100%
+        display: flex
+        justify-content: center
+        align-items: flex-end
+        position: relative
+    &__pop-content
+        display: none
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        padding: 16px 0
+        text-align: center
+        background: rgba(237, 58, 78, .5)
+        border: 1px solid rgba(255, 255, 255, .16)
+        border-radius: 8px
+        box-shadow: 0px 12px 24px rgba(56, 12, 12, .15)
+        &::after
+            content: ''
+            display: block
+            width: 10px
+            height: 10px
+            position: absolute
+            left: 79px
+            bottom: -6px
+            transform: rotate(45deg)
+            background: rgba(237, 58, 78, .5)
+    &__pop-text
+        display: block
+        font-size: 16px
+        line-height: 32px
+        color: #FFFFFF
+        &:last-of-type
+            opacity: .5
+
 @media (max-width: 1366px)
     .up
         position: absolute
@@ -408,14 +511,22 @@ body
     .top
         .main__title
             @include adaptiv-font(72, 56, 1170)
-    
+
     .features, .service
         .section__title
             @include adaptiv-font(56, 40, 1170)
-    
+
     .domain
         .medium__title
             @include adaptiv-font(40, 24, 1170)
+
+    .about
+        .section__title
+            @include adaptiv-font(56, 40, 1170)
+
+    .data
+        .section__title
+            @include adaptiv-font(56, 40, 1170)
 
 @media (max-width: 1079px)
     .features
@@ -455,6 +566,13 @@ body
             align-items: center
             gap: 0
             margin-bottom: 120px
+
+    .about
+        .about__box
+            flex-direction: column
+            align-items: center
+            gap: 0
+            margin-bottom: 122px
 
 @media (max-width: 684px)
     .top
@@ -509,6 +627,29 @@ body
             line-height: 48px
         .link
             margin-top: 14px
+    
+    .about
+        padding-top: 126px
+        padding-bottom: 96px
+        .about__heading
+            padding-top: 27px
+        .section__title
+            margin-top: 16px
+            margin-bottom: 15px
+            line-height: 48px
+        .link
+            margin-top: 16px
+        &__count
+            flex-wrap: wrap
+            justify-content: center
+        &__item
+            width: 213px
+            margin-bottom: 65px
+    
+    .data
+        .section__title
+            margin-top: 16px
+            margin-bottom: 54px
 
 @media (max-width: 550px)
     .up__media
@@ -533,3 +674,8 @@ body
             justify-content: space-between
         .domain__btn
             padding: 0
+
+@media (max-width: 475px)
+    .about
+        .about__item
+            width: 164px
