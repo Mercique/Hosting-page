@@ -89,32 +89,32 @@ body
         color: #FFFFFF
         background: $link-color
 
-// .up
-    // width: 100px
-    // height: 100%
-    // display: flex
-    // flex-direction: column
-    // align-items: center
-    // justify-content: flex-end
-    // gap: 15px
-    // position: fixed
-    // top: 0
-    // left: 0
-    // z-index: 5
-    // padding-bottom: 23px
-    // background: transparent
-    // transition: background .3s ease
-    // .section__text
-    //     transition: color .3s ease
-    // svg path
-    //     transition: fill .3s ease
-    // &:hover
-    //     background: rgba(0, 0, 0, .07)
-    //     .section__text
-    //         text-align: center
-    //         color: $sub__span-color
-    //     svg path
-    //         fill: $sub__span-color
+.up
+    width: 100px
+    height: 100%
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: flex-end
+    gap: 15px
+    position: fixed
+    top: 0
+    left: 0
+    z-index: 5
+    padding-bottom: 23px
+    background: transparent
+    transition: background .3s ease
+    .section__text
+        transition: color .3s ease
+    svg path
+        transition: fill .3s ease
+    &:hover
+        background: rgba(0, 0, 0, .07)
+        .section__text
+            text-align: center
+            color: $sub__span-color
+        svg path
+            fill: $sub__span-color
 
 .up__media
     width: 50px
@@ -122,12 +122,9 @@ body
     display: flex
     align-items: center
     justify-content: center
-    position: fixed
-    right: 23px
-    bottom: 23px
-    // position: absolute
-    // visibility: hidden
-    // right: -9999999px
+    position: absolute
+    visibility: hidden
+    right: -9999999px
     border-radius: 50%
     background: $sub__span-color
     transition: background .2s ease
@@ -554,7 +551,80 @@ body
         &:active
             svg
                 transform: scale(1.5)
-      
+
+.faq
+    display: flex
+    justify-content: center
+    padding-top: 186px
+    &__content
+        max-width: 570px
+    .section__title
+        margin-top: 18px
+        margin-bottom: 29px
+    .section__text
+        margin-bottom: 20px
+    &__details
+        position: relative
+        border-bottom: 1px solid #D8D8D8
+        &[open] .summary-box::after
+            transform: rotate(90deg)
+        &:hover .summary-box
+            background: #ED3A4E
+            &::before, &::after
+                background: #fff     
+        .section__text
+            opacity: .5
+    &__summary
+        display: flex
+        align-items: center
+        justify-content: space-between
+        padding-top: 16px
+        padding-bottom: 16px
+        font-weight: 700
+        font-size: 24px
+        line-height: 32px
+        color: #333333
+    .summary-box
+        width: 48px
+        height: 48px
+        position: relative
+        margin-left: 13px
+        border-radius: 50%
+        border: 2px solid #ED3A4E
+        background: #FFFFFF
+        transition: background .3s ease
+        &::before
+            content: ''
+            display: block
+            width: 15px
+            height: 3px
+            position: absolute
+            top: 21px
+            left: 15px
+            background: #ED3A4E
+            transition: background .3s ease
+        &::after
+            content: ''
+            display: block
+            width: 3px
+            height: 15px
+            position: absolute
+            top: 15px
+            left: 21px
+            transition: transform .3s ease, background .3s ease
+            background: #ED3A4E
+
+@media (max-width: 1558px)
+    .up
+        visibility: hidden
+        left: -9999999px
+
+    .up__media
+        visibility: visible
+        position: fixed
+        right: 23px
+        bottom: 23px
+
 @media (max-width: 1405px)
     .testimonials
         padding-left: 23px
@@ -578,25 +648,13 @@ body
         .main__title
             @include adaptiv-font(72, 56, 1170)
 
-    .features, .service
+    .features, .service, .about, .data, .testimonials, .faq
         .section__title
             @include adaptiv-font(56, 40, 1170)
 
     .domain
         .medium__title
             @include adaptiv-font(40, 24, 1170)
-
-    .about
-        .section__title
-            @include adaptiv-font(56, 40, 1170)
-
-    .data
-        .section__title
-            @include adaptiv-font(56, 40, 1170)
-    
-    .testimonials
-        .section__title
-            @include adaptiv-font(56, 40, 1170)
 
 @media (max-width: 1084px)
     .features
@@ -760,6 +818,12 @@ body
             line-height: 48px
         .section__text
             margin-bottom: 9px
+    
+    .faq
+        .section__title
+            margin-top: 16px
+            margin-bottom: 15px
+            line-height: 48px
 
 @media (max-width: 550px)
     .up__media
@@ -789,3 +853,8 @@ body
     .about
         .about__item
             width: 164px
+    
+    .faq
+        padding-top: 122px
+        .summary-text
+            max-width: 268px

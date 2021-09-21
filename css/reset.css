@@ -39,6 +39,6 @@ input {
     outline: none;
 }
 
-button, details, summary, label {
+button, summary, label {
     cursor: pointer;
 }
