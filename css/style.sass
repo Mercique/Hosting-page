@@ -89,32 +89,32 @@ body
         color: #FFFFFF
         background: $link-color
 
-.up
-    width: 100px
-    height: 100%
-    display: flex
-    flex-direction: column
-    align-items: center
-    justify-content: flex-end
-    gap: 15px
-    position: fixed
-    top: 0
-    left: 0
-    z-index: 5
-    padding-bottom: 23px
-    background: transparent
-    transition: background .3s ease
-    .section__text
-        transition: color .3s ease
-    svg path
-        transition: fill .3s ease
-    &:hover
-        background: rgba(0, 0, 0, .07)
-        .section__text
-            text-align: center
-            color: $sub__span-color
-        svg path
-            fill: $sub__span-color
+// .up
+    // width: 100px
+    // height: 100%
+    // display: flex
+    // flex-direction: column
+    // align-items: center
+    // justify-content: flex-end
+    // gap: 15px
+    // position: fixed
+    // top: 0
+    // left: 0
+    // z-index: 5
+    // padding-bottom: 23px
+    // background: transparent
+    // transition: background .3s ease
+    // .section__text
+    //     transition: color .3s ease
+    // svg path
+    //     transition: fill .3s ease
+    // &:hover
+    //     background: rgba(0, 0, 0, .07)
+    //     .section__text
+    //         text-align: center
+    //         color: $sub__span-color
+    //     svg path
+    //         fill: $sub__span-color
 
 .up__media
     width: 50px
@@ -122,9 +122,12 @@ body
     display: flex
     align-items: center
     justify-content: center
-    position: absolute
-    visibility: hidden
-    right: -9999999px
+    position: fixed
+    right: 23px
+    bottom: 23px
+    // position: absolute
+    // visibility: hidden
+    // right: -9999999px
     border-radius: 50%
     background: $sub__span-color
     transition: background .2s ease
@@ -436,14 +439,14 @@ body
         top: 11px
         left: 66px
     .South-America
-        top: 151px
-        left: 299px
+        top: 28%
+        left: 25%
     .Norway
         top: -48px
         left: 44%
     .Asia
-        top: 28px
-        right: 187px
+        top: 3%
+        right: 15%
     .Australia
         right: 16px
         bottom: 81px
@@ -490,22 +493,85 @@ body
         &:last-of-type
             opacity: .5
 
-@media (max-width: 1366px)
-    .up
+.testimonials
+    padding-left: calc( 50% - 672px )
+    padding-right: calc( 50% - 672px )
+    &__heading
+        padding-left: 87px
+    .section__title
+        margin-top: 18px
+        margin-bottom: 68px
+    &__slider
+        display: flex
+    .section__text
+        max-width: 470px
+        margin-bottom: 29px
+    &__content
+        display: flex
+        flex: 1
+        order: 2
+        padding: 0 39px
+    &__img
+        position: relative
+    &__img-callout
         position: absolute
-        visibility: hidden
-        left: -9999999px
-
-    .up__media
-        position: fixed
-        right: 23px
-        bottom: 23px
-        visibility: visible
+        top: -32px
+        right: -32px
+    &__text
+        margin-left: auto
+        padding-left: 20px
+        align-self: center
+    &__text-author
+        display: flex
+        gap: 11px
+        font-size: 16px
+        line-height: 32px
+    .text-author-opacity
+        opacity: .5
+    &__slider-btn
+        align-self: center
+        order: 1
+        &:last-of-type
+            order: 3
+    .btn
+        width: 48px
+        height: 48px
+        display: flex
+        align-items: center
+        justify-content: center
+        border-radius: 50%
+        border: 2px solid #ED3A4E
+        background: #fff
+        transition: background .3s ease
+        svg 
+            transition: transform .1s ease
+            path
+                transition: fill .3s ease
+        &:hover
+            background: #ED3A4E
+            svg path
+                fill: #fff
+        &:active
+            svg
+                transform: scale(1.5)
+      
+@media (max-width: 1405px)
+    .testimonials
+        padding-left: 23px
+        padding-right: 23px
 
 @media (max-width: 1216px)
     .center
         padding-left: 23px
         padding-right: 23px
+    
+    .testimonials
+        .testimonials__img-callout
+            top: calc( -16px + -16 * ((100vw - 375px) / (841)) )
+            right: calc( -16px + -16 * ((100vw - 375px) / (841)) )
+            svg
+                width: calc( 32px + 32 * ((100vw - 375px) / (841)) )
+                height: calc( 32px + 32 * ((100vw - 375px) / (841)) )
 
 @media (max-width: 1170px)
     .top
@@ -527,8 +593,12 @@ body
     .data
         .section__title
             @include adaptiv-font(56, 40, 1170)
+    
+    .testimonials
+        .section__title
+            @include adaptiv-font(56, 40, 1170)
 
-@media (max-width: 1079px)
+@media (max-width: 1084px)
     .features
         .features__advantages
             justify-content: center
@@ -540,6 +610,16 @@ body
             justify-content: center
         .service__item:not(:last-child)
             margin-bottom: 62px
+    
+    .testimonials
+        .testimonials__heading
+            padding-left: 0
+        .testimonials__slider
+            display: block
+        .testimonials__content
+            padding: 0 0 38px
+        .testimonials__slider-btn
+            display: inline-block
 
 @media (max-width: 989px)
     .top
@@ -573,6 +653,28 @@ body
             align-items: center
             gap: 0
             margin-bottom: 122px
+    
+    .data
+        .USA, .South-America, .Norway, .Asia, .Australia
+            display: none
+
+    .testimonials
+        display: flex
+        flex-direction: column
+        align-items: center
+        img
+            width: 100%
+        .testimonials__heading
+            width: 100%
+            max-width: 570px
+        .testimonials__content
+            flex-direction: column
+        .testimonials__text
+            margin: 38px 0 0
+            padding: 0
+            align-self: auto
+        .section__text
+            max-width: 570px
 
 @media (max-width: 684px)
     .top
@@ -650,6 +752,14 @@ body
         .section__title
             margin-top: 16px
             margin-bottom: 54px
+    
+    .testimonials
+        .section__title
+            margin-top: 16px
+            margin-bottom: 53px
+            line-height: 48px
+        .section__text
+            margin-bottom: 9px
 
 @media (max-width: 550px)
     .up__media
