@@ -615,6 +615,67 @@ body
             transition: transform .3s ease, background .3s ease
             background: #ED3A4E
 
+.blog
+    padding-top: 185px
+    &__heading
+        text-align: center
+    .section__title
+        margin-top: 18px
+    &__cards
+        display: flex
+        gap: 30px
+        margin-top: 68px
+        margin-bottom: 89px
+    .card
+        width: 270px
+        .section__text
+            margin-top: 15px
+            margin-bottom: 48px
+    .card__content
+        padding: 26px 24px 22px
+        background: #F3F6FA
+        border-radius: 0px 0px 12px 12px
+    .card__date, .newsletter__text
+        opacity: .5
+    .card__bottom-text, .card__date, .newsletter__text
+        font-size: 16px
+        line-height: 32px
+    &__newsletter
+        display: flex
+        justify-content: space-around
+    &__newsletter-item
+        max-width: 370px
+    .newsletter__text
+        margin-top: 17px
+    &__form
+        display: flex
+        gap: 10px
+        margin-top: 23px
+    &__input
+        width: 222px
+        padding: 9px 16px
+        font-size: 16px
+        line-height: 32px
+        color: #333333
+        background: #FFFFFF
+        border: 1px solid #DADADA
+        border-radius: 6px
+        &::placeholder
+            opacity: .5
+    &__button
+        width: 138px
+        font-weight: 700
+        font-size: 14px
+        line-height: 16px
+        text-align: center
+        text-transform: uppercase
+        color: #fff
+        background: #1D46F6
+        border-radius: 6px
+        transition: background .2s ease
+        &:active
+            background: rgba(29, 70, 246, .5)
+
 .footer
     padding-top: 74px
     color: #FFFFFF
@@ -702,7 +763,8 @@ body
         .main__title
             @include adaptiv-font(72, 56, 1170)
 
-    .features, .service, .about, .data, .testimonials, .faq
+    .features, .service, .about, .data, .testimonials, .faq,
+    .blog
         .section__title
             @include adaptiv-font(56, 40, 1170)
 
@@ -787,6 +849,16 @@ body
             align-self: auto
         .section__text
             max-width: 570px
+    
+    .blog
+        .blog__cards
+            flex-wrap: wrap
+            gap: 59px
+            justify-content: center
+        .blog__newsletter
+            flex-direction: column
+            align-items: center
+            gap: 89px
 
 @media (max-width: 767px)
     .footer
@@ -895,6 +967,13 @@ body
             margin-top: 16px
             margin-bottom: 15px
             line-height: 48px
+    
+    .blog
+        .section__title
+            margin-top: 16px
+        .blog__cards
+            margin-top: 54px
+            gap: 32px
 
 @media (max-width: 550px)
     .up__media
@@ -929,3 +1008,9 @@ body
         padding-top: 122px
         .summary-text
             max-width: 268px
+    
+    .blog
+        .blog__input
+            width: 197px
+        .blog__button
+            width: 123px
