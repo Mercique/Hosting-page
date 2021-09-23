@@ -585,6 +585,7 @@ body
         line-height: 32px
         color: #333333
     .summary-box
+        display: block
         width: 48px
         height: 48px
         position: relative
@@ -613,6 +614,59 @@ body
             left: 21px
             transition: transform .3s ease, background .3s ease
             background: #ED3A4E
+
+.footer
+    padding-top: 74px
+    color: #FFFFFF
+    background: #210C38
+    &__up
+        display: flex
+        justify-content: space-between
+    &__nav
+        padding-top: 16px
+    .sub__span
+        display: block
+        margin-bottom: 16px
+    &__link
+        font-size: 16px
+        line-height: 32px
+        transition: opacity .3s ease
+        &:hover
+            opacity: .5
+    &__social
+        display: flex
+        gap: 8px
+        padding-top: 16px
+    .social__link
+        width: 48px
+        height: 48px
+        display: flex
+        align-items: center
+        justify-content: center
+        border-radius: 50%
+        background: #1D46F6
+        transition: background .3s ease
+        &:hover
+            background: #0d217a
+    &__copyright
+        display: flex
+        justify-content: space-between
+        margin-top: 70px
+        padding-top: 41px
+        padding-bottom: 54px
+        border-top: 1px solid rgba(255, 255, 255, .16)
+    .copyright, .copyright__link
+        font-size: 16px
+        line-height: 32px
+        opacity: .5
+    .copyright__box
+        display: flex
+        gap: 36px
+    .copyright__link
+        opacity: 1
+        transition: opacity .3s ease
+        &:hover
+            opacity: .5
 
 @media (max-width: 1558px)
     .up
@@ -733,6 +787,23 @@ body
             align-self: auto
         .section__text
             max-width: 570px
+
+@media (max-width: 767px)
+    .footer
+        .footer__up, .footer__copyright
+            display: flex
+            flex-direction: column
+            align-items: center
+            text-align: center
+            gap: 32px
+        .footer__up
+            gap: 0
+        .footer__nav, .footer__social
+            padding-top: 48px
+        .footer__social
+            padding-top: 64px
+        .footer__copyright
+            margin-top: 64px
 
 @media (max-width: 684px)
     .top
