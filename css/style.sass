@@ -676,6 +676,100 @@ body
         &:active
             background: rgba(29, 70, 246, .5)
 
+.app
+    display: flex
+    align-items: center
+    justify-content: space-between
+    padding-top: 192px
+    &__text
+        max-width: 470px
+    .section__title
+        margin-top: 18px
+        margin-bottom: 29px
+    .link
+        margin-top: 34px
+
+.pricing
+    padding-top: 154px
+    &__heading
+        text-align: center
+    .section__title
+        padding-top: 18px
+    &__switch
+        display: flex
+        justify-content: center
+        gap: 42px
+        padding-top: 46px
+        padding-bottom: 54px
+    &__label
+        font-size: 16px
+        line-height: 32px
+        color: #333333
+        opacity: .5
+        transition: opacity .3s ease
+    &__input
+        position: absolute
+        visibility: hidden
+        left: -9999999px
+        &:checked + .pricing__label
+            opacity: 1
+    &__product
+        display: flex
+        justify-content: space-between
+    .section__text
+        text-align: right
+    .product
+        width: 370px
+        height: 528px
+        display: flex
+        flex-direction: column
+        padding: 25px 32px 32px
+        border-radius: 12px
+        color: #333333
+        background: #F3F6FA
+        transition: color .3s ease, background .3s ease
+        &:hover
+            color: #fff
+            background: #1D46F6
+            .link
+                color: #fff
+                background: #ED3A4E
+        &__text, &__price, &__text-opacity
+            font-size: 16px
+            line-height: 32px
+        &__price
+            margin-top: 35px
+            margin-bottom: 30px
+        &__text
+            margin-bottom: 16px
+        &__price-size
+            font-weight: 700
+            font-size: 56px
+            line-height: 64px
+            letter-spacing: -2px
+        &__text-opacity
+            opacity: .5
+    .link
+        margin-top: auto
+        background: transparent
+
+.contact
+    display: flex
+    justify-content: center
+    padding-top: 170px
+    padding-bottom: 144px
+    &__box
+        max-width: 770px
+        text-align: center
+    .section__title
+        margin-top: 18px
+        margin-bottom: 29px
+    &__box-links
+        display: flex
+        justify-content: center
+        gap: 30px
+        padding-top: 32px
+
 .footer
     padding-top: 74px
     color: #FFFFFF
@@ -764,7 +858,7 @@ body
             @include adaptiv-font(72, 56, 1170)
 
     .features, .service, .about, .data, .testimonials, .faq,
-    .blog
+    .blog, .app, .pricing, .contact
         .section__title
             @include adaptiv-font(56, 40, 1170)
 
@@ -772,7 +866,7 @@ body
         .medium__title
             @include adaptiv-font(40, 24, 1170)
 
-@media (max-width: 1084px)
+@media (max-width: 1086px)
     .features
         .features__advantages
             justify-content: center
@@ -794,6 +888,12 @@ body
             padding: 0 0 38px
         .testimonials__slider-btn
             display: inline-block
+    
+    .pricing
+        .pricing__product
+            flex-direction: column
+            align-items: center
+            gap: 16px
 
 @media (max-width: 989px)
     .top
@@ -859,6 +959,17 @@ body
             flex-direction: column
             align-items: center
             gap: 89px
+    
+    .app
+        padding-top: 159px
+        flex-direction: column-reverse
+        .app__text
+            padding-top: 28px
+        .section__title
+            margin-top: 16px
+            margin-bottom: 15px
+        .link
+            margin-top: 16px
 
 @media (max-width: 767px)
     .footer
@@ -974,6 +1085,24 @@ body
         .blog__cards
             margin-top: 54px
             gap: 32px
+    
+    .pricing
+        padding-top: 186px
+        .section__title
+            padding-top: 16px
+        .pricing__switch
+            padding-top: 32px
+            padding-bottom: 38px
+
+    .contact
+        padding-top: 154px
+        padding-bottom: 161px
+        .section__title
+            margin-top: 16px
+            margin-bottom: 15px
+        &__box-links
+            gap: 9px
+            padding-top: 17px
 
 @media (max-width: 550px)
     .up__media
@@ -998,6 +1127,11 @@ body
             justify-content: space-between
         .domain__btn
             padding: 0
+    
+    .contact
+        .link
+            width: 100%
+            padding: 16px 0
 
 @media (max-width: 475px)
     .about
@@ -1014,3 +1148,7 @@ body
             width: 197px
         .blog__button
             width: 123px
+
+    .center
+        padding-left: 0
+        padding-right: 0
